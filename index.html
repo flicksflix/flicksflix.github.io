@@ -119,6 +119,21 @@
             transition: transform 0.3s;
             cursor: pointer;
             overflow: hidden;
+            position: relative;
+        }
+
+        .ribbon {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #e50914;
+            color: white;
+            text-align: center;
+            padding: 5px 0;
+            font-size: 14px;
+            font-weight: bold;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
         }
 
         .movie-card:hover {
@@ -296,10 +311,17 @@
         <h2>Now Streaming</h2>
         <div class="movie-row">
             <div class="movie-card" data-movie-id="1" onclick="openModal(1)">
-                <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg" alt="Inside Out 2">
+                <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg">
             </div>
             <div class="movie-card" data-movie-id="2" onclick="openModal(2)">
-                <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg" alt="Titanic (1997)">
+                <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg">
+            </div>
+            <div class="movie-card" data-movie-id="3" onclick="openModal(3)">
+                <img src="https://image.tmdb.org/t/p/original/u4G8EkiIBZYx0wEg2xDlXZigTOZ.jpg">
+            </div>
+            <div class="movie-card" data-movie-id="4" onclick="openModal(4)">
+                <img src="https://image.tmdb.org/t/p/original/t3vaWRPSf6WjDSamIkKDs1iQWna.jpg">
+                <div class="ribbon">Coming Soon</div>
             </div>
         </div>
     </section>
@@ -386,6 +408,41 @@
                         <p><strong>Director:</strong> James Cameron</p>
                         <p><strong>Cast:</strong> Leonardo DiCaprio, Kate Winslet, Billy Zane, Kathy Bates, Frances Fisher, Gloria Stuart, Victor Garber, Bill Paxton, Bernard Hill</p>
                         <p><strong>Genre:</strong> Drama, Romantic</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals -->
+
+    <div class="modal" id="movieModal3">
+        <div class="modal-background"></div>
+        <div class="modal-container">
+            <button class="close-modal" onclick="closeModal(3)">✕</button>
+            
+            <div class="modal-header" style="background-image: url('https://image.tmdb.org/t/p/original/3gwCYulwHFRZsucxKHuzbRBZHQS.jpg')">
+                <div class="modal-header-content">
+                    <h1 class="modal-title">Cars</h1>
+                    <div class="movie-meta">
+                        <span>2006</span>
+                        <span>1h 57m</span>
+                        <span>Animation</span>
+                    </div>
+                    <a href="cars.html" class="watch-now-btn">Watch Now</a>
+                </div>
+            </div>
+
+            <div class="modal-info">
+                <img src="https://image.tmdb.org/t/p/original/u4G8EkiIBZYx0wEg2xDlXZigTOZ.jpg" class="modal-poster">
+                <div class="modal-details">
+                    <p class="movie-info">
+                        Lightning McQueen, a hotshot rookie race car driven to succeed, discovers that life is about the journey, not the finish line, when he finds himself unexpectedly detoured in the sleepy Route 66 town of Radiator Springs. On route across the country to the big Piston Cup Championship in California to compete against two seasoned pros, McQueen gets to know the town's offbeat characters.
+                    </p>
+                    <div>
+                        <p><strong>Director:</strong> John Lasseter</p>
+                        <p><strong>Cast:</strong> Owen Wilson, Larry the Cable Guy, Bonnie Hunt, Paul Newman, Tony Shalhoub</p>
+                        <p><strong>Genre:</strong> Animation, Comedy, Adventure</p>
                     </div>
                 </div>
             </div>
