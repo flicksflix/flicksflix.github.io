@@ -295,17 +295,20 @@
     <section class="movie-section">
         <h2>Now Streaming</h2>
         <div class="movie-row">
-            <div class="movie-card" onclick="openModal()">
+            <div class="movie-card" data-movie-id="1" onclick="openModal(1)">
                 <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg" alt="Inside Out 2">
+            </div>
+            <div class="movie-card" data-movie-id="2" onclick="openModal(2)">
+                <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg" alt="Titanic (1997)">
             </div>
         </div>
     </section>
 
     <!-- Modal -->
-    <div class="modal" id="movieModal">
+    <div class="modal" id="movieModal1">
         <div class="modal-background"></div>
         <div class="modal-container">
-            <button class="close-modal" onclick="closeModal()">✕</button>
+            <button class="close-modal" onclick="closeModal(1)">✕</button>
             
             <div class="modal-header" style="background-image: url('https://images.ctfassets.net/3m6gg2lxde82/TMiEcMTDjDPJYiGdNfqnB/fc4790d43dd71bc70b6223dde2bea161/inside-out-2.png?w=2048&h=1137&fit=fill&f=faces&q=90&fm=webp')">
                 <div class="modal-header-content">
@@ -320,7 +323,7 @@
             </div>
 
             <div class="modal-info">
-                <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg" alt="Inside Out 2 Poster" class="modal-poster">
+                <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg" class="modal-poster">
                 <div class="modal-details">
                     <p class="movie-info">
                         Teenage Riley's head is turned upside down when new emotions appear during a particularly trying time in her life. Joy, Sadness, Anger, Fear and Disgust, who've long been running a successful operation by this point, aren't sure how to feel about these new emotions showing up in Headquarters.
@@ -329,6 +332,39 @@
                         <p><strong>Director:</strong> Kelsey Mann</p>
                         <p><strong>Cast:</strong> Amy Poehler, Phyllis Smith, Lewis Black, Tony Hale</p>
                         <p><strong>Genre:</strong> Animation, Comedy, Family</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="movieModal2">
+        <div class="modal-background"></div>
+        <div class="modal-container">
+            <button class="close-modal" onclick="closeModal(2)">✕</button>
+            
+            <div class="modal-header" style="background-image: url('https://media.themoviedb.org/t/p/w533_and_h300_bestv2/4eylxg940ocgdkHjab2Tm8jv2hb.jpg')">
+                <div class="modal-header-content">
+                    <h1 class="modal-title">Titanic</h1>
+                    <div class="movie-meta">
+                        <span>1997</span>
+                        <span>3h 14m</span>
+                        <span>Romantic</span>
+                    </div>
+                    <a href="inside-out-2.html" class="watch-now-btn">Watch Now</a>
+                </div>
+            </div>
+
+            <div class="modal-info">
+                <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg" class="modal-poster">
+                <div class="modal-details">
+                    <p class="movie-info">
+                        101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic, 84 years later. A young Rose boards the ship with her mother and fiancé. Meanwhile, Jack Dawson and Fabrizio De Rossi win third-class tickets aboard the ship. Rose tells the whole story from Titanic's departure through to its death—on its first and last voyage—on April 15, 1912.
+                    </p>
+                    <div>
+                        <p><strong>Director:</strong> James Cameron</p>
+                        <p><strong>Cast:</strong> Leonardo DiCaprio, Kate Winslet, Billy Zane, Kathy Bates, Frances Fisher, Gloria Stuart, Victor Garber, Bill Paxton, Bernard Hill</p>
+                        <p><strong>Genre:</strong> Drama, Romantic</p>
                     </div>
                 </div>
             </div>
@@ -345,38 +381,54 @@
             }
         });
 
-        function openModal() {
-            const modal = document.getElementById('movieModal');
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            // Trigger reflow
-            modal.offsetHeight;
-            modal.classList.add('active');
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('movieModal');
+        function openModal(movieId) {
+    const modal = document.getElementById(`movieModal${movieId}`);
+    if (modal) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        // Trigger reflow
+        modal.offsetHeight;
+        modal.classList.add('active');
+    }
+}
+    function closeModal(movieId) {
+        const modal = document.getElementById(`movieModal${movieId}`);
+        if (modal) {
             modal.classList.remove('active');
             setTimeout(() => {
                 modal.style.display = 'none';
                 document.body.style.overflow = 'auto';
             }, 300);
         }
+    }
 
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('movieModal');
-            if (event.target.classList.contains('modal-background')) {
-                closeModal();
-            }
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal-background')) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                modal.classList.remove('active');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            });
         }
+    };
 
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                modal.classList.remove('active');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            });
+        }
+    });
     </script>
 </body>
 </html>
