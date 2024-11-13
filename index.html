@@ -287,6 +287,42 @@
         .watch-now-btn:hover {
             background-color: #f40612;
         }
+
+        footer {
+            background-color: #141414;
+            color: #a3a3a3;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #a3a3a3;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            font-size: 12px;
+        }
+
+        .dmca-notice {
+            font-size: 12px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -456,6 +492,19 @@
             </div>
         </div>
     </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Home</a>
+            <a href="#">My List (Coming Soon)</a>
+        </div>
+        <div class="copyright">
+            &copy; 2024 FlicksFlix. All rights reserved.
+        </div>
+        <div class="dmca-notice">
+            This website uses content from various third-party sources. We do not own or host any of the content displayed on this site. Any DMCA or other copyright-related complaints should be directed to the respective content owners.
+        </div>
+    </footer>
 
     <script>
         window.addEventListener('scroll', () => {
