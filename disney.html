@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disney Originals - FlicksFlix</title>
+    <title>FlicksFlix - Watch Movies & Series</title>
     <style>
         * {
             margin: 0;
@@ -51,21 +51,51 @@
             color: #e50914;
         }
 
-        .disney-hero {
-            height: 40vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                        url('https://wallpaperaccess.com/full/1955479.jpg') center/cover;
-            padding: 80px 40px 40px 40px;
+        .featured {
+            position: relative;
+            height: 80vh;
+            width: 100%;
+            overflow: hidden;
         }
 
-        .disney-logo {
+        .featured-image {
+            position: absolute;
+            width: 100%;
             height: 100%;
-            max-width: 80%;
-            object-fit: contain;
-            filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://images.ctfassets.net/3m6gg2lxde82/TMiEcMTDjDPJYiGdNfqnB/fc4790d43dd71bc70b6223dde2bea161/inside-out-2.png?w=2048&h=1137&fit=fill&f=faces&q=90&fm=webp') center/cover;
+        }
+
+        .featured-content {
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 40px;
+            max-width: 1000px;
+        }
+
+        .featured-content h1 {
+            font-size: 48px;
+            margin-bottom: 30px;
+        }
+
+        .watch-button {
+            background-color: #e50914;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 4px;
+            font-size: 18px;
+            cursor: pointer;
+            width: fit-content;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .watch-button:hover {
+            background-color: #f40612;
         }
 
         .movie-section {
@@ -89,6 +119,21 @@
             transition: transform 0.3s;
             cursor: pointer;
             overflow: hidden;
+            position: relative;
+        }
+
+        .ribbon {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #e50914;
+            color: white;
+            text-align: center;
+            padding: 5px 0;
+            font-size: 14px;
+            font-weight: bold;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
         }
 
         .movie-card:hover {
@@ -102,7 +147,6 @@
             border-radius: 4px;
         }
 
-        /* Modal styles (same as index.html) */
         .modal {
             display: none;
             position: fixed;
@@ -243,7 +287,7 @@
         .watch-now-btn:hover {
             background-color: #f40612;
         }
-        
+
         footer {
             background-color: #141414;
             color: #a3a3a3;
@@ -286,31 +330,59 @@
         <nav>
             <div class="logo">FlicksFlix</div>
             <div class="nav-links">
-                <a href="index.html">Home</a>
+                <a href="disney.html">Disney Originals</a>
             </div>
         </nav>
     </header>
 
-    <div class="disney-hero">
-        <img src="https://logos-world.net/wp-content/uploads/2021/02/Disney-Logo.png" 
-             alt="Disney" 
-             class="disney-logo">
-    </div>
+    <section class="featured">
+        <div class="featured-image"></div>
+        <div class="featured-content">
+            <h1>Feature of the Week: Inside Out 2</h1>
+            <a href="inside-out-2.html" class="watch-button">Watch Now</a>
+        </div>
+    </section>
 
     <section class="movie-section">
-        <h2>Disney Movies</h2>
+        <h2>Now Streaming</h2>
         <div class="movie-row">
-            <div class="movie-card" onclick="openModal()">
-                <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg" alt="Inside Out 2">
+            <div class="movie-card" data-movie-id="1" onclick="openModal(1)">
+                <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg">
+            </div>
+            <div class="movie-card" data-movie-id="3" onclick="openModal(3)">
+                <img src="https://image.tmdb.org/t/p/original/u4G8EkiIBZYx0wEg2xDlXZigTOZ.jpg">
+            </div>
+            <div class="movie-card" data-movie-id="4" onclick="openModal(4)">
+                <img src="https://image.tmdb.org/t/p/original/t3vaWRPSf6WjDSamIkKDs1iQWna.jpg">
+                <div class="ribbon">New Addition</div>
             </div>
         </div>
     </section>
 
-    <!-- Modal -->
-    <div class="modal" id="movieModal">
+    <!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals -->
+    <!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals -->
+    <!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals -->
+    <!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals -->
+    <!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals -->
+    <!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals -->
+    <!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals -->
+    <!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals -->
+    <!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals -->
+    <!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals -->
+    <!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals -->
+    <!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals -->
+    <!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals -->
+    <!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals -->
+    <!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals -->
+    <!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals -->
+    <!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals -->
+    <!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals -->
+    <!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals -->
+
+    <div class="modal" id="movieModal1">
         <div class="modal-background"></div>
         <div class="modal-container">
-            <button class="close-modal" onclick="closeModal()">✕</button>
+            <button class="close-modal" onclick="closeModal(1)">✕</button>
             
             <div class="modal-header" style="background-image: url('https://images.ctfassets.net/3m6gg2lxde82/TMiEcMTDjDPJYiGdNfqnB/fc4790d43dd71bc70b6223dde2bea161/inside-out-2.png?w=2048&h=1137&fit=fill&f=faces&q=90&fm=webp')">
                 <div class="modal-header-content">
@@ -325,7 +397,7 @@
             </div>
 
             <div class="modal-info">
-                <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg" alt="Inside Out 2 Poster" class="modal-poster">
+                <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg" class="modal-poster">
                 <div class="modal-details">
                     <p class="movie-info">
                         Teenage Riley's head is turned upside down when new emotions appear during a particularly trying time in her life. Joy, Sadness, Anger, Fear and Disgust, who've long been running a successful operation by this point, aren't sure how to feel about these new emotions showing up in Headquarters.
@@ -333,6 +405,76 @@
                     <div>
                         <p><strong>Director:</strong> Kelsey Mann</p>
                         <p><strong>Cast:</strong> Amy Poehler, Phyllis Smith, Lewis Black, Tony Hale</p>
+                        <p><strong>Genre:</strong> Animation, Comedy, Family</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals -->
+
+    <div class="modal" id="movieModal3">
+        <div class="modal-background"></div>
+        <div class="modal-container">
+            <button class="close-modal" onclick="closeModal(3)">✕</button>
+            
+            <div class="modal-header" style="background-image: url('https://image.tmdb.org/t/p/original/3gwCYulwHFRZsucxKHuzbRBZHQS.jpg')">
+                <div class="modal-header-content">
+                    <h1 class="modal-title">Cars</h1>
+                    <div class="movie-meta">
+                        <span>2006</span>
+                        <span>1h 57m</span>
+                        <span>Animation</span>
+                    </div>
+                    <a href="cars.html" class="watch-now-btn">Watch Now</a>
+                </div>
+            </div>
+
+            <div class="modal-info">
+                <img src="https://image.tmdb.org/t/p/original/u4G8EkiIBZYx0wEg2xDlXZigTOZ.jpg" class="modal-poster">
+                <div class="modal-details">
+                    <p class="movie-info">
+                        Lightning McQueen, a hotshot rookie race car driven to succeed, discovers that life is about the journey, not the finish line, when he finds himself unexpectedly detoured in the sleepy Route 66 town of Radiator Springs. On route across the country to the big Piston Cup Championship in California to compete against two seasoned pros, McQueen gets to know the town's offbeat characters.
+                    </p>
+                    <div>
+                        <p><strong>Director:</strong> John Lasseter</p>
+                        <p><strong>Cast:</strong> Owen Wilson, Larry the Cable Guy, Bonnie Hunt, Paul Newman, Tony Shalhoub</p>
+                        <p><strong>Genre:</strong> Animation, Comedy, Adventure</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals --><!-- Modals -->
+
+    <div class="modal" id="movieModal4">
+        <div class="modal-background"></div>
+        <div class="modal-container">
+            <button class="close-modal" onclick="closeModal(4)">✕</button>
+            
+            <div class="modal-header" style="background-image: url('https://image.tmdb.org/t/p/original/xgDj56UWyeWQcxQ44f5A3RTWuSs.jpg')">
+                <div class="modal-header-content">
+                    <h1 class="modal-title">Ratatouille</h1>
+                    <div class="movie-meta">
+                        <span>2007</span>
+                        <span>1h 51m</span>
+                        <span>Animation</span>
+                    </div>
+                    <a href="ratatouille.html" class="watch-now-btn">Watch Now</a>
+                </div>
+            </div>
+
+            <div class="modal-info">
+                <img src="https://image.tmdb.org/t/p/original/t3vaWRPSf6WjDSamIkKDs1iQWna.jpg" class="modal-poster">
+                <div class="modal-details">
+                    <p class="movie-info">
+                        Lightning McQueen, a hotshot rookie race car driven to succeed, discovers that life is about the journey, not the finish line, when he finds himself unexpectedly detoured in the sleepy Route 66 town of Radiator Springs. On route across the country to the big Piston Cup Championship in California to compete against two seasoned pros, McQueen gets to know the town's offbeat characters.
+                    </p>
+                    <div>
+                        <p><strong>Director:</strong> Brad Bird</p>
+                        <p><strong>Cast:</strong> Patton Oswalt, Ian Holm, Lou Romano, Brian Dennehy, Janeane Garofalo</p>
                         <p><strong>Genre:</strong> Animation, Comedy, Family</p>
                     </div>
                 </div>
@@ -363,35 +505,54 @@
             }
         });
 
-        function openModal() {
-            const modal = document.getElementById('movieModal');
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            modal.offsetHeight;
-            modal.classList.add('active');
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('movieModal');
+        function openModal(movieId) {
+    const modal = document.getElementById(`movieModal${movieId}`);
+    if (modal) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        // Trigger reflow
+        modal.offsetHeight;
+        modal.classList.add('active');
+    }
+}
+    function closeModal(movieId) {
+        const modal = document.getElementById(`movieModal${movieId}`);
+        if (modal) {
             modal.classList.remove('active');
             setTimeout(() => {
                 modal.style.display = 'none';
                 document.body.style.overflow = 'auto';
             }, 300);
         }
+    }
 
-        window.onclick = function(event) {
-            const modal = document.getElementById('movieModal');
-            if (event.target.classList.contains('modal-background')) {
-                closeModal();
-            }
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal-background')) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                modal.classList.remove('active');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            });
         }
+    };
 
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                modal.classList.remove('active');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            });
+        }
+    });
     </script>
 </body>
 </html>
